@@ -1,5 +1,6 @@
 :root {
     --blue-background-color: #6686F9;
+    --grey-contrast-color: #ffffff8a;
 }
 
 * {
@@ -8,6 +9,7 @@
     margin: 0;
     padding: 0;
     font-size: 10px;
+    overflow-x: hidden;
 }
 
 header {
@@ -17,6 +19,7 @@ header {
     backdrop-filter: blur(6px);
     top: 0;
     border-bottom: 1px solid gray;
+    z-index: 999;
 }
 
 .header-content {
@@ -74,8 +77,7 @@ main {
 }
 
 section {
-    margin-top: 15px;
-    backdrop-filter: blur(0.6);
+
 }
 
 .welcome-banner {
@@ -103,34 +105,34 @@ section {
     border-radius: 50%;
     width: 250px;
     height: 250px;
-    position: absolute;
     bottom: 30%;
     left: 62rem;
     aspect-ratio: 1.25/3;
-    z-index: 1;
+    z-index: 2;
+    position: absolute;
 }
 
 .profile-text {
+    bottom: 20%;
+    left: 92rem;
+    max-width: 450px;
     position: absolute;
-    bottom: 35%;
-    left: 95rem;
-    max-width: 400px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .profile-text h1 {
     color: var(--blue-background-color);
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .profile-text h3 {
     margin-top: 20px; 
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .profile-text h4 {
     margin-top: 20px;
-    font-size: 1.25rem;
+    font-size: 2.25rem;
 }
 
 #projects {
@@ -139,31 +141,54 @@ section {
     width: 100%;
 }
 
+.blue-box-two {
+    background-color: var(--blue-background-color);
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: 800px 800px;
+    grid-template-rows: 10% 80% 10%;
+    height: 100vh;
+}
+
 #projects h1 {
     font-size: 4rem;
     text-decoration: underline;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    padding-top: 5px;
 }
 
 .project-container {
-    margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 30px;
+    row-gap: 5px;
+    height: 80vh;
+    width: 80%;
+    margin: 5% 5% 0 5%;
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
 }
 
 .project {
     background-color: #000;
-    width: 350px;
-    height: 350px;
+    width: 340px;
+    height: 270px;
+    overflow: hidden;
 }
 
 .project-name {
-    background-color: var(--blue-background-color);
-    margin-top: 300px;
-    height: 40px;
+    background-color: var(--grey-contrast-color);
+    margin-top: 210px;
+    height: 45px;
     padding-top: 8px;
     color: rgba(255, 255, 255, 1);
     font-size: 2rem;
@@ -171,16 +196,19 @@ section {
 }
 
 .all-projects {
-    margin: 20px 0;
-    height: 40px;
-    width: 90px;
-    background-color: var(--blue-background-color);
+    margin: 8px 0 60px 0;
+    height: 50px;
+    width: 100px;
+    background-color: black;
     color: rgba(255, 255, 255, 0.6);
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
     transition: font-size 4s;
     transition: color 2s;
+    grid-column: 1 / -1;
+    grid-row: 3 / -1;
+    margin-left: 45%;
 }
 
 .all-projects:hover {
@@ -188,4 +216,99 @@ section {
     color: rgba(255, 255, 255, 1);
 }
 
+#tech-stack-and-contact {
+    height: 100vh;
+    width: 100%;
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 800px 1fr;
+    grid-template-rows: 90% 10%;
+}
+
+.tech-stack {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+
+.tech-stack h2 {
+    margin: 15px auto;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.tech-logos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 45px;
+    height: 80%;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.tech-logos img {
+    width: 33%;
+    background-color: rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+}
+
+.contact {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: var(--blue-background-color);
+}
+
+.contact h2 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+form {
+    margin-top: 50px;
+    margin-left: 150px;
+    text-align: center;
+    width: 520px;
+}
+
+form div input {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.form-name input {
+    width: 258.5px;
+    height: 50px;
+    font-size: 2rem;
+}
+
+.form-email input {
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+}
+
+.form-message textarea {
+    width: 100%;
+    height: 300px;
+    font-size: 2rem;
+    padding-left: 5px;
+}
+
+.form-submit {
+    margin-top: 20px;
+    width: 120px;
+    height: 50px;
+    font-size: 2.5rem;
+}
+
+.black-space {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    background-color: rgba(0, 0, 0, 1);
+}
 
