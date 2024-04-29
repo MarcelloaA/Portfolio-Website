@@ -1,6 +1,7 @@
 :root {
     --blue-background-color: #6686F9;
     --grey-contrast-color: #ffffff8a;
+    --main-background-color: #FEFAF6;
 }
 
 * {
@@ -10,6 +11,7 @@
     padding: 0;
     font-size: 10px;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -77,7 +79,7 @@ main {
 }
 
 section {
-
+    background-color: var(--main-background-color);
 }
 
 .welcome-banner {
@@ -137,8 +139,8 @@ section {
 
 #projects {
     text-align: center;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
 }
 
 .blue-box-two {
@@ -151,7 +153,6 @@ section {
     display: grid;
     grid-template-columns: 800px 800px;
     grid-template-rows: 10% 80% 10%;
-    height: 100vh;
 }
 
 #projects h1 {
@@ -178,7 +179,7 @@ section {
     grid-row: 1 / -1;
 }
 
-.project {
+.project-tile {
     background-color: #000;
     width: 340px;
     height: 270px;
@@ -200,7 +201,7 @@ section {
     height: 50px;
     width: 100px;
     background-color: black;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 1);
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
@@ -213,7 +214,7 @@ section {
 
 .all-projects:hover {
     font-size: 1.75rem;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 2);
 }
 
 #tech-stack-and-contact {
@@ -245,13 +246,12 @@ section {
     flex-wrap: wrap;
     margin: 10px 45px;
     height: 80%;
-    border: 1px solid black;
     padding: 20px;
 }
 
-.tech-logos img {
+.tech-logos i {
     width: 33%;
-    background-color: rgba(0, 0, 0, 1);
+    padding-left: 8%;
     margin-bottom: 10px;
 }
 
@@ -306,9 +306,36 @@ form div input {
     font-size: 2.5rem;
 }
 
-.black-space {
-    grid-column: 1 / 3;
+.socials {
+    grid-column: 1 / -1;
     grid-row: 2 / 3;
     background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
 }
+
+.socials h2 {
+    font-size: 3rem;
+    padding-left: 3%;
+}
+
+.socials-icons {
+    padding-right: 3%;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials-icons i {
+    overflow: hidden;
+}
+
+.socials-icons a {
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
 
